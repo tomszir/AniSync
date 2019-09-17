@@ -1,0 +1,22 @@
+{
+  "name": "rt1os-express-boilerplate",
+  "version": "1.0.0",
+  "description": "A simple boilerplate for express (with sequelize).",
+  "main": "./src/main.js",
+  "scripts": {
+    "prod": "cross-env NODE_ENV=PRODUCTION node ./src/main.js",
+    "dev": "cross-env NODE_ENV=DEVELOPMENT nodemon ./src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.1",
+    "express": "^4.17.1",
+    "sequelize": "^5.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
