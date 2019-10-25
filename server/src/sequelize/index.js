@@ -5,10 +5,10 @@ const Sequelize = require('sequelize')
 const config = require('../config')
 
 const sequelize = new Sequelize(
-  config.database,
-  config.username,
-  config.password,
-  config
+  config.sequelize.database,
+  config.sequelize.username,
+  config.sequelize.password,
+  config.sequelize
 )
 
 const database = {}

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap');
+
+@import 'setup/normalize.scss';
+@import 'setup/typography.scss';
+@import 'setup/variables.scss';
+@import 'setup/mixins.scss';
+
+@import 'basics/base.scss';
+@import 'basics/layout.scss';
+@import 'basics/links.scss';
+@import 'basics/buttons.scss';
+@import 'basics/inputs.scss';
+@import 'basics/spinner.scss';

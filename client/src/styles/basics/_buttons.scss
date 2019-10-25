@@ -1,0 +1,25 @@
+button {
+  cursor: default;
+
+  border-radius: 0;
+  padding: 0 10px 0 10px;
+
+  height: $input-height;
+  min-width: $input-height;
+
+  color: $input-text-color;
+  border: $input-border-size solid $input-bg-color;
+  background-color: $input-bg-color;
+
+  font-family: $primary-font;
+  transition: ease-in 0.25s;
+}
+
+button:hover,
+button:focus {
+  transition: ease-out 1s;
+  border: $input-border-size solid $input-border-color;
+
+  outline: none;
+  box-shadow: none;
+}

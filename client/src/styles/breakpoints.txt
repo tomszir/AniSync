@@ -1,0 +1,14 @@
+Mobile portait (320px to 414px)
+For devices with 4" to 6.9" screens.
+
+Mobile landscape (568px to 812px)
+Same, but landscape.
+
+Tablet portait (768px to 834px)
+For devices 7" to 10"
+
+Tablet landscape (1024px to 1112px)
+Ditto, but also 12" tablets on portrait
+
+Laptop & desktop displays (1200px+)
+Varies a lot, but is usually 1200px and above

@@ -1,24 +1,24 @@
 const chalk = require('chalk')
+
 const config = require('./config')
 
-console.log(
-  `${chalk.black.bgBlue(' INFO ')} Running in ${chalk.blue(config.ENV)} mode\n`
-)
+const app = require('./app')
+const sockets = require('./sockets/index')
+const { sequelize } = require('./sequelize/index')
 
-if (config.ENV === 'DEVELOPMENT' && Object.keys(config).length === 1) {
-  console.log(
-    `${chalk.black.bgYellow(' WARN ')} No ${chalk.blue(
-      'DEVELOPMENT'
-    )} config file exists:`
-  )
-  console.log(
-    `
-    - Please create one at this location: ${chalk.blue('./src/config.dev.js')}
-    - Or switch to ${chalk.blue('PRODUCTION')} mode, by using: ${chalk.blue(
-      'npm run prod'
-    )}
-    `
-  )
-} else {
-  require('./app')
-}
+console.clear()
+
+sequelize.sync({ force: config.ENV === 'development' }).then(() => {
+  const server = app.listen(config.port, () => {
+    console.log('')
+    console.log(`  Server running on:`)
+    console.log(`  - Environment: ${chalk.cyanBright(config.ENV)}`)
+    console.log(
+      `  - Local: ${chalk.cyan('http://localhost:')}${chalk.cyanBright(
+        config.port
+      )}${chalk.cyan('/')}`
+    )
+  })
+
+  sockets.init(server)
+})

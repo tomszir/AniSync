@@ -1,16 +1,14 @@
 const fs = require('fs')
 const path = require('path')
 const cors = require('cors')
-const chalk = require('chalk')
+const morgan = require('morgan')
 const express = require('express')
 const bodyParser = require('body-parser')
 
 const app = express()
 
-const config = require('./config')
-const { sequelize } = require('./sequelize/index.js')
-
 app.use(cors())
+app.use(morgan('tiny'))
 app.use(bodyParser.json())
 
 fs.readdirSync(path.join(__dirname, 'routes'))
@@ -25,13 +23,4 @@ fs.readdirSync(path.join(__dirname, 'routes'))
     app.use(`/${routeName}`, route)
   })
 
-sequelize.sync({ force: config.ENV === 'development' }).then(() => {
-  app.listen(config.port, () => {
-    console.log(`${chalk.black.bgBlue(' INFO ')} The server has been started`)
-    console.log(
-      `
-      - Running locally on: ${chalk.blue('http://localhost:' + config.port)}
-      `
-    )
-  })
-})
+module.exports = app

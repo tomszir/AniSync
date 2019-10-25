@@ -1,0 +1,25 @@
+input {
+  height: $input-height;
+  padding: 0 10px 0 10px;
+
+  border: $input-border-size $input-bg-color solid;
+  border-radius: 0;
+  color: clr(primary);
+  background-color: $input-bg-color;
+
+  font-family: $secondary-font;
+  transition: ease-in 0.25s;
+}
+
+input:hover,
+input:focus {
+  transition: ease-out 1s;
+  border: $input-border-size solid $input-border-color;
+
+  outline: none;
+  box-shadow: none;
+}
+
+input::placeholder {
+  color: clr(primary);
+}

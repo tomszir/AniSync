@@ -1,0 +1,37 @@
+// Colors
+$bg-color: #1c1f22;
+$secondary-bg-color: #131618;
+
+$colors: (
+  'primary': (
+    'base': #399561
+  )
+);
+
+@function clr($base, $shade: base) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}
+
+// Inputs
+$input-height: 45px;
+$input-border-size: 1px;
+
+$input-bg-color: #282a2d;
+$input-border-color: #717375;
+$input-text-color: #bec1c4;
+
+// Video Player
+$position-indicator-size: 18px;
+$position-indicator-color: #fff;
+$position-indicator-bg-color: rgba(255, 255, 255, 0.3);
+
+$slider-size: 3px;
+$slider-bg-color: rgba(255, 255, 255, 0.6);
+
+$volume-slider-height: 60px;
+
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 768px;
+$small-desktop-breakpoint: 992px;
+$desktop-breakpoint: 1200px;
